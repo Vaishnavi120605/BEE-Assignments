@@ -1,3 +1,2 @@
 # BEE-Assignments
-
-### hello world
+this repo consists of assignments of bee
