@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Online Movie Ticket Booking System</title>
+</head>
+<body>
+  <h1>Online Movie Ticket Booking System</h1>
+  <p>Open the Browser Console to view the booking process.</p>
+
+  <script>
+    let seatsAvailable = true;
+
+    const booking = new Promise((resolve, reject) => {
+      console.log("1. Checking Seat Availability...");
+
+      setTimeout(() => {
+        if (seatsAvailable) {
+          resolve("Seats are available.");
+        } else {
+          reject("No Seats Available.");
+        }
+      }, 2000);
+    });
+
+    booking
+      .then((seatResult) => {
+        console.log(seatResult);
+        console.log("2. Processing Payment...");
+
+        return seatResult + " Payment processed successfully.";
+      })
+      .then((paymentResult) => {
+        console.log(paymentResult);
+        console.log("3. Confirming Booking...");
+
+        return paymentResult + " Booking confirmed.";
+      })
+      .then((confirmationResult) => {
+        console.log(confirmationResult);
+        console.log("4. Generating Ticket...");
+
+        return confirmationResult + " Ticket generated: MOVIE-12345.";
+      })
+      .then((ticketResult) => {
+        console.log(ticketResult);
+        console.log("Booking process completed successfully!");
+      })
+      .catch((error) => {
+        console.error("Booking failed: " + error);
+      });
+  </script>
+</body>
+</html>
